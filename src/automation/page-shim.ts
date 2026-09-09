@@ -391,10 +391,13 @@ export class PageShim {
       // Second param matches Playwright's real newCDPSession(page) signature;
       // unused here since the shim's session is already bound to one target.
       newCDPSession: async (_page?: PageShim) => this.cdpSession.attachNewSession(),
-      storageState: async (opts?: { path?: string }) => {
-        // Implemented in Phase C (storage-state.ts)
-        throw new Error('storageState not yet implemented');
-      },
+      // Playwright's context().storageState({path}) has a real equivalent in
+      // this codebase, but it lives in automation/storage-state.ts
+      // (saveStorageState/loadStorageState) and is called directly from
+      // browser/manager.ts — never through this shim. This stub was never
+      // wired up to that and nothing calls it, so it's removed rather than
+      // finished: implementing it would just be a second, unused path to the
+      // same file format.
     };
   }
 

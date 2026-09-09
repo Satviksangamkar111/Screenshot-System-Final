@@ -430,7 +430,6 @@ The single place in the codebase that talks to an LLM API. Any future feature ne
 
 - `locator-shim.ts` implements the parts of Playwright's selector syntax the interaction layer relies on — `:visible`, `:has-text()`, `:text-is()` — because plain `querySelectorAll` rejects them as invalid syntax.
 - `:text-is()` matches the **smallest** element holding the text (matching Playwright's own behavior); dialog actions click the element that actually owns the handler (a `button`, or `li[role="option"]`) — never a text node nested inside it.
-- `npm run check:selectors` — standalone regression check for this engine.
 
 ### 7.1 Shadow DOM interaction
 

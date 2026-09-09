@@ -40,13 +40,23 @@ Automates browser exploration of enterprise web applications (SAP Fiori, UI5, We
 
 ## Installation
 
-### Requirements (server machine only)
+### End Users
+
+**Required:** A web browser (Chrome, Edge, Safari, Firefox) and network access to the server.
+
+**That's it.** End users run nothing locally. No Node.js, npm, or browser driver installation needed. Just open the server's URL and paste application URLs.
+
+### Server Setup
+
+**Server machine only** (the machine running the engine):
 
 | Requirement | Why |
 |---|---|
 | **Node.js ≥ 20** | Runs the engine and server |
 | **Google Chrome or Microsoft Edge** | Driven directly over Chrome DevTools Protocol; no binary download |
 | **LLM API key** *(optional)* | Only for AI Summary. Deterministic General Summary works without one |
+
+**Once deployed as a self-contained package, the server requires no manual setup either** — just run the executable or container and point browsers at it.
 
 ### Setup
 
